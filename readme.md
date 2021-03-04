@@ -13,8 +13,7 @@ This is a pytorch deep learning project that recognizes data processing and comp
 
 冶炼数据转炉操作数据表下载：
 
-转炉数据1号炉：[Nutstore 坚果云](https://www.jianguoyun.com/p/DU6eNA8QtZeiCRifneQD)
-转炉数据2号炉：[Nutstore 坚果云](https://www.jianguoyun.com/p/DaowMJkQtZeiCRibneQD)
+转炉数据：[Nutstore 坚果云](https://www.jianguoyun.com/p/DckpewMQnqiiCRjfp-QD)
 
 放置在：
 ```
