@@ -16,7 +16,7 @@ class Parameters():
         self.drop_err_coef = 3.5
         self.lr = 1e-4
         self.batch_size = 128
-        self.epochs = 20
+        self.epochs = 100
         """
         训练超参数：
             TEST_SIZE： 训练集测试集划分比例，默认值0.2

@@ -15,5 +15,5 @@ class DataPreprocess(Split):
 
 if __name__ == '__main__':
     pm = Parameters()
-    dp = DataPreprocess('Q235B-Z', 1, pm.input_factorsTest, pm.output_factorsTest)
+    dp = DataPreprocess('195-Y', 1, pm.input_factorsTest, pm.output_factorsTest)
     print(dp.dataPreprocess())

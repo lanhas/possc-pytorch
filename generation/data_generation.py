@@ -1,3 +1,6 @@
+import sys
+sys.path.append('F:\code\python\data_mining\possc-pytorch')
+
 from pathlib import Path
 from generation.s3_classify import Classify
 
@@ -14,3 +17,7 @@ class DataGeneration():
             native_ = Classify(_iter)
             native_dfdata = native_.classify()
             native_dfdata.to_csv(Path(self.target_path, subfolder_name + '.csv'), encoding='gbk', index=0)
+        
+if __name__ == '__main__':
+    da = DataGeneration()
+    da.dataGeneration()
