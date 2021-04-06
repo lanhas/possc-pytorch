@@ -15,7 +15,7 @@ This is a pytorch deep learning project that recognizes data processing and comp
 
 转炉数据(部分）：[Nutstore 坚果云](https://www.jianguoyun.com/p/DckpewMQnqiiCRjfp-QD )
 
-                [百度网盘](https://pan.baidu.com/s/13QVRQzEtev9LSaTTDxF2UA) 提取码：3ej1
+[百度网盘](https://pan.baidu.com/s/13QVRQzEtev9LSaTTDxF2UA) 提取码：3ej1
 
 放置在：
 ```
