@@ -1,7 +1,11 @@
 import numpy as np
 import pandas as pd
 from pathlib import Path
+import sys
+sys.path.append(r'F:\code\python\data_mining\possc-pytorch') 
 from preprocess.s0_native import DataNative
+
+from constants.parameters import Parameters
 
 
 class Cleanout(DataNative):
@@ -19,6 +23,19 @@ class Cleanout(DataNative):
         # res_data = droped_data.fillna(droped_data.mean())
         for i in range(droped_data.shape[1]):
             droped_data.iloc[:, i] = droped_data.iloc[:, i].fillna(droped_data.iloc[:, i].mean())
+        return droped_data
+    
+    def delete_nan(self, df_data):
+        data = df_data
+        label_drop = []
+        for i in range(data.shape[0]):
+            if data.iloc[i].isnull().values.sum() > 0:
+                label_drop.append(i)
+        data.index = range(len(data))
+        droped_data = data.drop(label_drop, axis=0)
+        # res_data = droped_data.fillna(droped_data.mean())
+        # for i in range(droped_data.shape[1]):
+        #     droped_data.iloc[:, i] = droped_data.iloc[:, i].fillna(droped_data.iloc[:, i].mean())
         return droped_data
 
     def drop_error(self, df_data, drop_coef):
@@ -38,6 +55,16 @@ class Cleanout(DataNative):
 
     def cleanout(self):
         df_data = self.extrateData()
-        df_data = self.drop_nan(df_data, self.pm.drop_nan_coef)
+        # df_data = self.drop_nan(df_data, self.pm.drop_nan_coef)
+        df_data = self.delete_nan(df_data)
         res_data = self.drop_error(df_data, self.pm.drop_err_coef)
-        return res_data 
+        return res_data
+
+
+if __name__ == "__main__":
+    pm = Parameters()
+    dn = Cleanout('Q235B-Z', 1, pm.input_factorsTest, pm.output_factorsTest)
+    df_data = dn.extrateData()
+    df_data = dn.delete_nan(df_data)
+    print(df_data.shape)
+    
